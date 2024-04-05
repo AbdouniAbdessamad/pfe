@@ -112,10 +112,19 @@
                                                         class="relative py-4 pl-3 pr-4 text-sm sm:pr-6 flex flex-row gap-2">
                                                         @if(auth()->user()->role == 'administrateur')
                                                         <a href="{{ route('supplier.edit', ['supplier' => $supplier->id]) }}"
-                                                            class="text-indigo-600 hover:text-indigo-900">
+                                                            class="text-indigo-600 hover:text-indigo-900 ">
                                                             <x-primary-button>
                                                                 Editer
                                                             </x-primary-button>
+                                                        </a>
+
+                                                        @endif
+                                                        <a
+                                                            href="{{ route('supplier.show', ['supplier' => $supplier->id]) }}">
+                                                            <button
+                                                            class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
+                                                                Plus d'info
+                                                            </button>
                                                         </a>
                                                         <x-danger-button x-data=""
                                                             x-on:click.prevent="$dispatch('open-modal', 'confirm-supplier-{{$supplier->id}}-deletion')">
@@ -127,14 +136,6 @@
                                                             </svg>
                                                             <span class="sr-only">Supprimer</span>
                                                         </x-danger-button>
-                                                        @endif
-                                                        <a
-                                                            href="{{ route('supplier.show', ['supplier' => $supplier->id]) }}">
-                                                            <button
-                                                            class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
-                                                                Plus d'info
-                                                            </button>
-                                                        </a>
 
 
 
